@@ -23,7 +23,7 @@ export default {
 <style scoped>
 
 .fa-linkedin-square, .fa-twitter-square, .fa-pencil, .fa-github-square {
-  color: black;
+  color: white;
   margin: 5px;
 }
 
