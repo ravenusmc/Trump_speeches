@@ -4,12 +4,10 @@
 import numpy as np
 import pandas as pd
 import json
-import datetime
 from textblob import TextBlob
-from pathlib import Path
 
-#This class is what will be used to do the data analysis.
-class textAnalysis():
+#This class is what will be used to get all the speeches set up.
+class Speeches():
 
     def __init__(self):
         self.first_speech = pd.read_json('./data/one.json', typ='series')
@@ -40,10 +38,21 @@ class textAnalysis():
         self.sixteen_speech, self.seventeen_speech, self.eightteen_speech, self.nineteen_speech,
         self.twenty_speech, self.twenty_one_speech]
 
-    def working(self):
-        print(self.all_speeches[19]['speechlocation'])
+    def get_speech_text(self):
+        speech_text = self.all_speeches[0]['text']
+        return speech_text
+        # total = 0
+        # average_counter = 0
+        # for sentence in text_ready_for_analysis.sentences:
+        #     sentence_sentiment = sentence.sentiment[0]
+        #     monthly_sentiment.append(sentence_sentiment)
+
+    def get_speech_text_into_text_blog_version(self, speech_text):
+        text_ready_for_analysis = TextBlob(speech_text)
+        return text_ready_for_analysis
 
 
 
-test = textAnalysis()
-test.working()
+
+# test = Speeches()
+# test.get_speech_text()
