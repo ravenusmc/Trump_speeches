@@ -1,12 +1,15 @@
-#This class is what will examine the speeches
+# This class is what will examine the speeches
 
-#importing supporting libraries
+# importing supporting libraries
 import numpy as np
 import pandas as pd
 import json
 from textblob import TextBlob
 
-#This class is what will be used to examine the speeches using text blob.
+# Importing libraries I made
+from support import *
+
+# This class is what will be used to examine the speeches using text blob.
 class Examine():
 
     def get_speech_text(self, textObject):
@@ -18,6 +21,12 @@ class Examine():
         #     sentence_sentiment = sentence.sentiment[0]
         #     monthly_sentiment.append(sentence_sentiment)
 
-    def get_speech_text_into_text_blog_version(self, speech_text):
+    def find_specific_speech(self, textObject, speech_title):
+        support = Support()
+        #looping through the textObject to find the speech I need
+        speech_JSON = support.loop_to_find_speech(textObject, speech_title)
+        print(speech_JSON)
+
+    def get_speech_text_into_textblob_version(self, speech_text):
         text_ready_for_analysis = TextBlob(speech_text)
         return text_ready_for_analysis

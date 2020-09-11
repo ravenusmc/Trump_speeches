@@ -21,9 +21,18 @@ class Analysis():
         text_blog_text = examine.get_speech_text_into_text_blog_version(speech_text)
         print(text_blog_text)
 
-    def get_sentiment_by_speech(self):
+    def get_sentiment_by_speech(self, speech_title):
+        textObject = Speeches()
+        examine = Examine()
+        # I have to find the spefic speech that holds the title that the user wants.
+        examine.find_specific_speech(textObject, speech_title)
+        # once I have the text, I need to go through it line by line to get the sentiment
+        # Average out the sentiment
         pass
 
 
 test = Analysis()
-test.start_analysis()
+#test.start_analysis()
+speech_title = 'Remarks at a Make America Great Again Rally in Melbourne Florida'
+test.get_sentiment_by_speech(speech_title)
+#Remarks at a Make America Great Again Rally in Melbourne Florida => eightteen.json
