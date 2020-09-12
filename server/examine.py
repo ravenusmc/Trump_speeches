@@ -15,18 +15,27 @@ class Examine():
     def get_speech_text(self, textObject):
         speech_text = textObject.all_speeches[0]['text']
         return speech_text
-        # total = 0
-        # average_counter = 0
-        # for sentence in text_ready_for_analysis.sentences:
-        #     sentence_sentiment = sentence.sentiment[0]
-        #     monthly_sentiment.append(sentence_sentiment)
 
     def find_specific_speech(self, textObject, speech_title):
         support = Support()
         #looping through the textObject to find the speech I need
         speech_JSON = support.loop_to_find_speech(textObject, speech_title)
-        print(speech_JSON)
+        return speech_JSON
+
+    def get_speech_text(self, speech_JSON):
+        speech_text = speech_JSON['text']
+        return speech_text
 
     def get_speech_text_into_textblob_version(self, speech_text):
-        text_ready_for_analysis = TextBlob(speech_text)
-        return text_ready_for_analysis
+        speech_textblob_version = TextBlob(speech_text)
+        return speech_textblob_version
+
+    def build_sentiment_list(self, speech_textblob_version):
+        sentiment_sentence_list = []
+        for sentence in speech_textblob_version.sentences:
+            sentence_sentiment = sentence.sentiment[0]
+            sentiment_sentence_list.append(sentence_sentiment)
+        return sentiment_sentence_list
+
+    def get_average_from_list(self, sentiment_list):
+        return sum(sentiment_list) / len(sentiment_list) 
