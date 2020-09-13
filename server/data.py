@@ -11,6 +11,7 @@ from pathlib import Path
 #Importing files I built
 from speeches import *
 from examine import *
+from support import *
 
 class Analysis():
 
@@ -33,11 +34,23 @@ class Analysis():
         sentiment_list = examine.build_sentiment_list(speech_textblob_version)
         # Getting the mean sentiment from the list
         mean = examine.get_average_from_list(sentiment_list)
-        print(mean)
+        return mean
+
+    def get_sentiment_by_sentence_by_speech(self, speech_title):
+        textObject = Speeches()
+        examine = Examine()
+        support = Support()
+        # I have to find the spefic speech that holds the title that the user wants.
+        speech_JSON = examine.find_specific_speech(textObject, speech_title)
+        # Getting the actual speech out of the JSON.
+        speech_text = examine.get_speech_text(speech_JSON)
+        speech_in_list = support.turn_speech_string_to_list(speech_text)
+        # Getting the length of the speech in the list 
+        length_of_speech_in_list = len(speech_in_list)
 
 
 test = Analysis()
 #test.start_analysis()
 speech_title = 'Remarks at a Make America Great Again Rally in Melbourne Florida'
-test.get_sentiment_by_speech(speech_title)
+test.get_sentiment_by_sentence_by_speech(speech_title)
 #Remarks at a Make America Great Again Rally in Melbourne Florida => eightteen.json

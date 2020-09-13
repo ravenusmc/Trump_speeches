@@ -11,3 +11,7 @@ class Support():
                 break
             count += 1
         return speech_JSON
+
+    def turn_speech_string_to_list(self, speech_text):
+        speech_in_list = list(speech_text.split(". "))
+        return speech_in_list
