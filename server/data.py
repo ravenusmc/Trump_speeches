@@ -47,11 +47,15 @@ class Analysis():
         speech_in_list = support.turn_speech_string_to_list(speech_text)
         sentence = speech_in_list[position]
         sentence_sentiment = examine.get_sentiment_of_sentence(sentence)
-        return sentence_sentiment
+        # Making a list to hold the sentence and sentiment to send back to the client side
+        sentence_and_sentiment_list = []
+        sentence_and_sentiment_list.append(sentence)
+        sentence_and_sentiment_list.append(sentence_sentiment)
+        return sentence_and_sentiment_list
 
 
-
-
+    def sentiment_of_all_speeches(self):
+        pass
 
 test = Analysis()
 #test.start_analysis()
