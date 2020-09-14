@@ -36,7 +36,7 @@ class Analysis():
         mean = examine.get_average_from_list(sentiment_list)
         return mean
 
-    def get_sentiment_by_sentence_by_speech(self, speech_title):
+    def get_sentiment_by_sentence_by_speech(self, speech_title, position):
         textObject = Speeches()
         examine = Examine()
         support = Support()
@@ -45,12 +45,20 @@ class Analysis():
         # Getting the actual speech out of the JSON.
         speech_text = examine.get_speech_text(speech_JSON)
         speech_in_list = support.turn_speech_string_to_list(speech_text)
-        # Getting the length of the speech in the list 
-        length_of_speech_in_list = len(speech_in_list)
+        sentence = speech_in_list[position]
+        sentence_sentiment = examine.get_sentiment_of_sentence(sentence)
+        return sentence_sentiment
+
+
+
 
 
 test = Analysis()
 #test.start_analysis()
 speech_title = 'Remarks at a Make America Great Again Rally in Melbourne Florida'
-test.get_sentiment_by_sentence_by_speech(speech_title)
+position = 10
+test.get_sentiment_by_sentence_by_speech(speech_title, position)
 #Remarks at a Make America Great Again Rally in Melbourne Florida => eightteen.json
+
+# Getting the length of the speech in the list
+# length_of_speech_in_list = len(speech_in_list)

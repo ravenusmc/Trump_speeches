@@ -38,4 +38,9 @@ class Examine():
         return sentiment_sentence_list
 
     def get_average_from_list(self, sentiment_list):
-        return sum(sentiment_list) / len(sentiment_list) 
+        return sum(sentiment_list) / len(sentiment_list)
+
+    def get_sentiment_of_sentence(self, sentence):
+        sentence_ready_for_analysis = TextBlob(sentence)
+        sentence_sentiment = sentence_ready_for_analysis.sentiment[0]
+        return sentence_sentiment
