@@ -37,9 +37,3 @@ class Speeches():
         self.twelve_speech, self.thirteen_speech, self.fourteen_speech, self.fifteen_speech,
         self.sixteen_speech, self.seventeen_speech, self.eightteen_speech, self.nineteen_speech,
         self.twenty_speech, self.twenty_one_speech]
-
-
-
-
-# test = Speeches()
-# test.get_speech_text()
