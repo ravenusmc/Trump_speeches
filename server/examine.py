@@ -44,3 +44,22 @@ class Examine():
         sentence_ready_for_analysis = TextBlob(sentence)
         sentence_sentiment = sentence_ready_for_analysis.sentiment[0]
         return sentence_sentiment
+
+    def get_sentiment_by_all_speeches(self, textObject):
+        count = 0
+        sentiment_collection = []
+        columns = ['Speech_Title', 'Sentiment']
+        sentiment_collection.append(columns)
+        # I need to get the speech title and sentiment of each speech
+        while count < len(textObject.all_speeches):
+            rows = []
+            speech_title = textObject.all_speeches[count]['speechtitle']
+            speech_text = textObject.all_speeches[count]['text']
+            speech_textblob_version = self.get_speech_text_into_textblob_version(speech_text)
+            sentiment_sentence_list = self.build_sentiment_list(speech_textblob_version)
+            sentiment_mean_by_speech = self.get_average_from_list(sentiment_sentence_list)
+            rows.append(speech_title)
+            rows.append(sentiment_mean_by_speech)
+            sentiment_collection.append(rows)
+            count += 1
+        return sentiment_collection

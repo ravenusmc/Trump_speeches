@@ -54,14 +54,14 @@ class Analysis():
 
     def sentiment_of_all_speeches(self):
         # I need to get the sentiment of each speech which means getting the
-        # sentiment of each sentence. 
-        pass
+        # sentiment of each sentence.
+        sentiment_collection = self.examine.get_sentiment_by_all_speeches(self.textObject)
 
 test = Analysis()
 #test.start_analysis()
 speech_title = 'Remarks at a Make America Great Again Rally in Melbourne Florida'
 position = 10
-test.get_sentiment_by_sentence_by_speech(speech_title, position)
+test.sentiment_of_all_speeches()
 #Remarks at a Make America Great Again Rally in Melbourne Florida => eightteen.json
 
 # Getting the length of the speech in the list
