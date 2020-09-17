@@ -53,8 +53,6 @@ class Analysis():
 
 
     def sentiment_of_all_speeches(self):
-        # I need to get the sentiment of each speech which means getting the
-        # sentiment of each sentence.
         sentiment_collection = self.examine.get_sentiment_by_all_speeches(self.textObject)
 
 test = Analysis()
