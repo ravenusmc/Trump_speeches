@@ -34,6 +34,6 @@ header {
 header div {
   padding: 20px;
   color: red;
-  background-color: rgba(52, 58, 64, 0.7);
+  background-color: rgba(52, 58, 64, 0.8);
 }
 </style>
