@@ -51,15 +51,23 @@ class Analysis():
         sentence_and_sentiment_list.append(sentence_sentiment)
         return sentence_and_sentiment_list
 
-
     def sentiment_of_all_speeches(self):
         sentiment_collection = self.examine.get_sentiment_by_all_speeches(self.textObject)
+
+    def get_most_common_words_by_speech(self, speech_title):
+        speech_JSON = self.examine.find_specific_speech(self.textObject, speech_title)
+        speech_text = self.examine.get_speech_text(speech_JSON)
+        print(speech_text)
+        # Once I have the text object I have to loop through the speech
+        # getting the most common words
+
+        pass
 
 test = Analysis()
 #test.start_analysis()
 speech_title = 'Remarks at a Make America Great Again Rally in Melbourne Florida'
 position = 10
-test.sentiment_of_all_speeches()
+test.get_most_common_words_by_speech(speech_title)
 #Remarks at a Make America Great Again Rally in Melbourne Florida => eightteen.json
 
 # Getting the length of the speech in the list
