@@ -63,3 +63,6 @@ class Examine():
             sentiment_collection.append(rows)
             count += 1
         return sentiment_collection
+
+    def build_speech_into_lost(self, speech_text):
+        return list(speech_text.split(" "))

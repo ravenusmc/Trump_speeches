@@ -57,11 +57,9 @@ class Analysis():
     def get_most_common_words_by_speech(self, speech_title):
         speech_JSON = self.examine.find_specific_speech(self.textObject, speech_title)
         speech_text = self.examine.get_speech_text(speech_JSON)
-        print(speech_text)
-        # Once I have the text object I have to loop through the speech
-        # getting the most common words
-
-        pass
+        words_in_list = self.examine.build_speech_into_lost(speech_text)
+        word_and_count = self.support.clean_word_list(words_in_list)
+        print(word_and_count)
 
 test = Analysis()
 #test.start_analysis()
