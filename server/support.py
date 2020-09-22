@@ -47,7 +47,16 @@ class Support():
                 and current_word != 'should' and current_word != 'come' and current_word != 'during' and current_word != 'been'
                 and current_word != 'among' and current_word != 'toward' and current_word != 'there' and current_word != 'only'
                 and current_word != 'become' and current_word != 'may' and current_word != 'need' and current_word != 'between'
-                and current_word != 'every' and current_word != 'other' and current_word != 'yet' and current_word != 'let'):
+                and current_word != 'every' and current_word != 'other' and current_word != 'yet' and current_word != 'let'
+                and current_word != 'into' and current_word != 'about' and current_word != 'know' and current_word != 'was'
+                and current_word != 'going' and current_word != 'very'  and current_word != 'it.s' and current_word != 'tell'
+                and current_word != 'they.re' and current_word != 'because' and current_word != 'want' and current_word != 'never'
+                and current_word != 'them' and current_word != 'many'  and current_word != 'just' and current_word != 'don.t'
+                and current_word != 'big' and current_word != 'when'  and current_word != 'it.' and current_word != 'your'
+                and current_word != 'said,' and current_word != 'he'  and current_word != 'way,' and current_word != 'we.ve'
+                and current_word != 'back' and current_word != 'that.s'  and current_word != 'at' and current_word != 'we.re'
+                and current_word != 'over' and current_word != 'new'  and current_word != 'i.ve' and current_word != 'got'
+                and current_word != 'look' and current_word != 'what.s'  and current_word != 'were'):
                     word_count += 1
                     if (word_count >= 10):
                         word_and_count[current_word] = word_count
