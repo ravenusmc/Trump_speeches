@@ -61,11 +61,11 @@ class Analysis():
         word_and_count = self.support.clean_word_list(words_in_list)
         print(word_and_count)
 
-test = Analysis()
+#test = Analysis()
 #test.start_analysis()
-speech_title = 'Remarks at a Make America Great Again Rally in Melbourne Florida'
-position = 10
-test.get_most_common_words_by_speech(speech_title)
+# speech_title = 'Remarks at a Make America Great Again Rally in Melbourne Florida'
+# position = 10
+# test.get_most_common_words_by_speech(speech_title)
 #Remarks at a Make America Great Again Rally in Melbourne Florida => eightteen.json
 
 # Getting the length of the speech in the list
