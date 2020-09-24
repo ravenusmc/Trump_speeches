@@ -22,7 +22,8 @@
             gave throughout his time as President. The goal is to see the average
             sentiment of each speech as well as the common words in them. To get the
             average sentiment, I get the sentiment of a single sentence and then take
-            the mean of all the sentences together.
+            the mean of all the sentences together. I next look at the most common
+            words in his speeches to see what they show - if anything at all.
           </p>
         </div>
       <div>
@@ -43,5 +44,9 @@ section {
   display: grid;
   grid-template-columns: 1fr 1fr;
   margin: 50px 5% 50px 5%;
+}
+
+section div {
+  margin: 0 5px 0 5px;
 }
 </style>
