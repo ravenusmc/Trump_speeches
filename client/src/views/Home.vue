@@ -3,6 +3,7 @@
     <Navbar/>
     <Header/>
     <Background/>
+    <OneSpeech/>
     <Footer/>
   </div>
 </template>
@@ -12,6 +13,7 @@
 import Navbar from '@/components/view/Navbar.vue';
 import Footer from '@/components/view/Footer.vue';
 import Header from '@/components/home/Header.vue';
+import OneSpeech from '@/components/studyComponents/OneSpeech.vue';
 import Background from '@/components/home/Background.vue';
 
 export default {
@@ -20,6 +22,7 @@ export default {
     Navbar,
     Header,
     Background,
+    OneSpeech,
     Footer,
   },
 };
