@@ -1,7 +1,13 @@
 # This class will focus on providing methods that support the rest of
 # the application.
 
+#Importing files I built
+from speeches import *
+
 class Support():
+
+    def __init__(self):
+        self.textObject = Speeches()
 
     def loop_to_find_speech(self, textObject, speech_title):
         count = 0
@@ -62,14 +68,17 @@ class Support():
                         word_and_count[current_word] = word_count
             len_count += 1
         return word_and_count
-#
-#     def buildChartData(self, word_and_count):
-#         chartData = []
-#         columns = ['Word', 'Count']
-#         chartData.append(columns)
-#         for word, count in word_and_count.items():
-#             rows = []
-#             rows.append(word)
-#             rows.append(count)
-#             chartData.append(rows)
-#         return chartData
+
+    def get_speech_titles(self):
+        self.textObject = Speeches()
+        speech_titles = []
+        count = 0
+        while count < len(self.textObject.all_speeches):
+            speech_title = self.textObject.all_speeches[count]['speechtitle']
+            speech_titles.append(speech_title)
+            count += 1
+        print(speech_titles)
+
+
+test = Support()
+test.get_speech_titles()
