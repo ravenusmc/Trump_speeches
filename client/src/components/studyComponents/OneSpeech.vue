@@ -25,6 +25,8 @@
 
 <script>
 import GraphCard from '@/components/graphs/GraphCard.vue';
+// import { mapGetters, mapActions } from 'vuex';
+import { mapActions } from 'vuex';
 
 export default {
   name: 'OneSpeech',
@@ -32,7 +34,7 @@ export default {
     return {
       speech: 'Remarks by President Trump at Tax Reform Event',
       speeches: [
-        'Remarks by President Trump at Tax Reform Event', 'Remarks by President Trump on TaxReform',
+        'Remarks by President Trump on TaxReform',
         'President Trumps Address to a Joint Session of Congress',
         'President Trump on the Paris Climate Accord',
         'Remarks by the President at the NRCC Dinner',
@@ -56,24 +58,15 @@ export default {
     GraphCard,
   },
   methods: {
+    ...mapActions([
+      'fetchOneSpeechChartData',
+    ]),
     submitForm(evt) {
       evt.preventDefault();
-      console.log(this.speech);
-      // this.speech;
-      // console.log(speech);
-      // this.startDate = moment(this.startDate).format('M/D/YYYY h:mm:ss A');
-      // this.endDate = moment(this.endDate).format('M/D/YYYY h:mm:ss A');
-      // const payload = {
-      //   category: this.category,
-      //   state: this.state,
-      //   currency: 'USD',
-      //   country: 'US',
-      //   startDate: this.startDate,
-      //   endDate: this.endDate,
-      //   moneyGoal: this.moneyGoal,
-      //   backers: this.backers,
-      // };
-      // this.fireActions({ payload });
+      const payload = {
+        speech: this.speech,
+      };
+      this.fetchOneSpeechChartData({ payload });
     },
   },
 };
