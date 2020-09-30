@@ -80,5 +80,5 @@ class Support():
         print(speech_titles)
 
 
-test = Support()
-test.get_speech_titles()
+# test = Support()
+# test.get_speech_titles()

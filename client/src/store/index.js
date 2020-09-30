@@ -8,31 +8,34 @@ export default new Vuex.Store({
 
   state: {
     oneSpeechChartData: [],
+    speechMean: 0.11,
   },
 
   getters: {
+    speechMean: (state) => state.speechMean,
   },
 
   actions: {
 
     // This action will get the data for the speech selected. Remember that
     // the action appears to NEED to take 2 arguments, not 1.
-    fetchOneSpeechChartData: ({ commit }, { payload }) => {
-      const path = 'http://localhost:5000/single_speech_chart';
+    fetchSpeechMean: ({ commit }, { payload }) => {
+      const path = 'http://localhost:5000/get_sentiment_by_speech';
       axios.post(path, payload)
         .then((res) => {
-          console.log(res);
-          // res.data.sort((a, b) => b[1] - a[1]);
-          commit('setOneSpeechChartData', res.data);
+          console.log(res.data);
+          commit('setSpeechMean', res.data);
         });
     },
 
   },
 
+  // res.data.sort((a, b) => b[1] - a[1]);
+
   mutations: {
 
-    setOneSpeechChartData(state, data) {
-      state.oneSpeechChartData = data;
+    setSpeechMean(state, data) {
+      state.speechMean = data;
     },
 
   },

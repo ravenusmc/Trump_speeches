@@ -17,6 +17,7 @@
         <!-- End Boostrap Form -->
       </div>
       <div>
+        <p>{{ this.speechMean }}</p>
         <GraphCard />
       </div>
     </section>
@@ -26,10 +27,13 @@
 <script>
 import GraphCard from '@/components/graphs/GraphCard.vue';
 // import { mapGetters, mapActions } from 'vuex';
-import { mapActions } from 'vuex';
+import { mapGetters, mapActions } from 'vuex';
 
 export default {
   name: 'OneSpeech',
+  components: {
+    GraphCard,
+  },
   data() {
     return {
       speech: 'Remarks by President Trump at Tax Reform Event',
@@ -54,19 +58,21 @@ export default {
       ],
     };
   },
-  components: {
-    GraphCard,
+  computed: {
+    ...mapGetters([
+      'speechMean',
+    ]),
   },
   methods: {
     ...mapActions([
-      'fetchOneSpeechChartData',
+      'fetchSpeechMean',
     ]),
     submitForm(evt) {
       evt.preventDefault();
       const payload = {
         speech: this.speech,
       };
-      this.fetchOneSpeechChartData({ payload });
+      this.fetchSpeechMean({ payload });
     },
   },
 };

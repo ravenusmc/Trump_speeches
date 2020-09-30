@@ -35,7 +35,7 @@ class Analysis():
         sentiment_list = self.examine.build_sentiment_list(speech_textblob_version)
         # Getting the mean sentiment from the list
         mean = self.examine.get_average_from_list(sentiment_list)
-        return mean
+        return format(mean, '.2f')
 
     def get_sentiment_by_sentence_by_speech(self, speech_title, position):
         # I have to find the spefic speech that holds the title that the user wants.
