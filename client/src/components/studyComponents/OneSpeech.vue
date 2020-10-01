@@ -17,7 +17,9 @@
         <!-- End Boostrap Form -->
       </div>
       <div>
-        <p>{{ this.speechMean }}</p>
+        <div>
+          <p>{{ this.speechMean }}</p>
+        </div>
         <GraphCard />
       </div>
     </section>
