@@ -5,7 +5,7 @@
         <!-- Bootstrap From -->
         <form @submit="submitForm">
           <div class="form-group">
-            <label for="exampleInputEmail1">Select Speech</label>
+            <label for="exampleInputEmail1">Select Speech:</label>
             <select class="custom-select" v-model="speech" name="speech">
               <option v-for="speech in speeches" v-bind:key="speech" :value="speech">
                 {{ speech }}
@@ -17,24 +17,22 @@
         <!-- End Boostrap Form -->
       </div>
       <div>
-        <div>
-          <p>{{ this.speechMean }}</p>
+        <div class='average-sentiment-div'>
+          <p><span>Average Sentiment in Speech:</span> {{ this.speechMean }}</p>
+          <p>Current Sentence: </p>
+          <p>Sentence Sentiment: </p>
         </div>
-        <GraphCard />
       </div>
     </section>
   </div>
 </template>
 
 <script>
-import GraphCard from '@/components/graphs/GraphCard.vue';
-// import { mapGetters, mapActions } from 'vuex';
 import { mapGetters, mapActions } from 'vuex';
 
 export default {
   name: 'OneSpeech',
   components: {
-    GraphCard,
   },
   data() {
     return {
@@ -86,6 +84,17 @@ export default {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 3em;
+}
+
+span {
+  font-weight: bold;
+}
+
+.average-sentiment-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 </style>

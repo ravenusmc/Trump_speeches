@@ -37,6 +37,14 @@ class Analysis():
         mean = self.examine.get_average_from_list(sentiment_list)
         return format(mean, '.2f')
 
+    def get_sentence_from_speech(self, speech_title, position):
+        # I have to find the spefic speech that holds the title that the user wants.
+        speech_JSON = self.examine.find_specific_speech(self.textObject, speech_title)
+        # Getting the actual speech out of the JSON.
+        speech_text = self.examine.get_speech_text(speech_JSON)
+        speech_in_list = self.support.turn_speech_string_to_list(speech_text)
+
+
     def get_sentiment_by_sentence_by_speech(self, speech_title, position):
         # I have to find the spefic speech that holds the title that the user wants.
         speech_JSON = self.examine.find_specific_speech(self.textObject, speech_title)
