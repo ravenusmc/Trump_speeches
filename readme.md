@@ -2,7 +2,9 @@
 ## Intro
 
 This project's aim is to use some basic Natural language processing to examine
-Trump's speeches.
+Trump's speeches. This project is more of a proof of concept in that I did not
+really clean all the speeches that I had. Thus, some of the sentiment that I get back
+may not be 100% right. 
 
 # Getting started
 ### Installing
