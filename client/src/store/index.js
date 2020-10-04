@@ -9,10 +9,14 @@ export default new Vuex.Store({
   state: {
     oneSpeechChartData: [],
     speechMean: 0.11,
+    initialSentence: 'Thank you very much.',
+    initalValue: 0,
   },
 
   getters: {
     speechMean: (state) => state.speechMean,
+    initialSentence: (state) => state.initialSentence,
+    initalValue: (state) => state.initalValue,
   },
 
   actions: {

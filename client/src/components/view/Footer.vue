@@ -4,7 +4,7 @@
       <div class='footer_fix'>
         <h2 class='footerTitle font'>Copyright &copy; 2020 Double Sun Productions<br></h2>
           <div>
-            <a href="https://www.linkedin.com/in/mcuddy1/"><i class="fa fa-linkedin-square fa-3x" aria-hidden="true"></i></a>
+            <a href="https://www.linkedin.com/in/mcuddy1/"><i class="fa fa-linkedin-square fa-3x"></i></a>
             <a href="https://twitter.com/mcuddy7"><i class="fa fa-twitter-square fa-3x" aria-hidden="true"></i></a>
             <a href="https://codingsaga.wordpress.com/"><i class="fa fa-pencil fa-3x" aria-hidden="true"></i></a>
             <a href="https://github.com/ravenusmc"><i class="fa fa-github-square fa-3x" aria-hidden="true"></i></a>

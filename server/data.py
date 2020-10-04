@@ -43,7 +43,8 @@ class Analysis():
         # Getting the actual speech out of the JSON.
         speech_text = self.examine.get_speech_text(speech_JSON)
         speech_in_list = self.support.turn_speech_string_to_list(speech_text)
-
+        print(speech_in_list[position])
+        return speech_in_list[position]
 
     def get_sentiment_by_sentence_by_speech(self, speech_title, position):
         # I have to find the spefic speech that holds the title that the user wants.
@@ -69,11 +70,11 @@ class Analysis():
         word_and_count = self.support.clean_word_list(words_in_list)
         print(word_and_count)
 
-#test = Analysis()
-#test.start_analysis()
+# test = Analysis()
+# test.start_analysis()
 # speech_title = 'Remarks at a Make America Great Again Rally in Melbourne Florida'
-# position = 10
-# test.get_most_common_words_by_speech(speech_title)
+# position = 0
+# test.get_sentence_from_speech(speech_title, position)
 #Remarks at a Make America Great Again Rally in Melbourne Florida => eightteen.json
 
 # Getting the length of the speech in the list
