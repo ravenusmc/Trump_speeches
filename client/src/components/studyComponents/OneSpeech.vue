@@ -24,7 +24,7 @@
           <h4>Change Sentence</h4>
           <div>
             <svg
-            v-on:click="changeSentence"
+            @click="changeSentence('up')"
             width="3em"
             height="3em"
             viewBox="0 0 16 16"
@@ -35,7 +35,7 @@
               7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5
               5.707V11.5z"/>
             </svg>
-            <svg v-on:click="changeSentence" width="3em" height="3em" viewBox="0 0 16 16"
+            <svg @click="changeSentence('down')" width="3em" height="3em" viewBox="0 0 16 16"
               class="bi bi-arrow-down-circle-fill"
               fill="currentColor" xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1
@@ -90,6 +90,7 @@ export default {
   methods: {
     ...mapActions([
       'fetchSpeechMean',
+      'fetchSpeechSentenceSentiment',
     ]),
     submitForm(evt) {
       evt.preventDefault();
@@ -98,11 +99,19 @@ export default {
       };
       this.fetchSpeechMean({ payload });
     },
-    changeSentence(evt) {
-      evt.preventDefault();
-      console.log(this.speechMean);
-      console.log(this.initalValue);
-      console.log('Mike');
+    changeSentence(direction) {
+      let value = this.initalValue;
+      if (direction === 'up') {
+        value += 1;
+        console.log(value);
+      } else if (direction === 'down') {
+        value -= 1;
+        console.log(value);
+      }
+      const payload = {
+        value,
+      };
+      this.fetchSpeechSentenceSentiment({ payload });
     },
   },
 };

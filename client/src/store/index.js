@@ -27,9 +27,20 @@ export default new Vuex.Store({
       const path = 'http://localhost:5000/get_sentiment_by_speech';
       axios.post(path, payload)
         .then((res) => {
-          console.log(res.data);
           commit('setSpeechMean', res.data);
         });
+    },
+    // This action will get the sentiment of a single sentence based on a speech.
+    fetchSpeechSentenceSentiment: ({ commit }, { payload }) => {
+      console.log('In Action');
+      console.log(payload);
+      commit('setInitialSentence', 'Hi');
+      // const path = 'http://localhost:5000/get_sentiment_by_speech';
+      // axios.post(path, payload)
+      //   .then((res) => {
+      //     console.log(res.data);
+      //     commit('setSpeechMean', res.data);
+      //   });
     },
 
   },
@@ -40,6 +51,10 @@ export default new Vuex.Store({
 
     setSpeechMean(state, data) {
       state.speechMean = data;
+    },
+
+    setInitialSentence(state, data) {
+      state.initialSentence = data;
     },
 
   },
