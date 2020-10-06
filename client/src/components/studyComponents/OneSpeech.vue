@@ -20,7 +20,6 @@
         <div class='average-sentiment-div'>
           <p><span>Average Sentiment in Speech:</span> {{ this.speechMean }}</p>
           <p>Current Sentence: {{ this.initialSentence }}</p>
-          <p>Sentence Sentiment: {{ this.initialValue }}</p>
           <h4>Change Sentence</h4>
           <div>
             <svg
@@ -59,6 +58,7 @@ export default {
   data() {
     return {
       speech: 'Remarks by President Trump at Tax Reform Event',
+      value: this.initalValue,
       speeches: [
         'Remarks by President Trump on TaxReform',
         'President Trumps Address to a Joint Session of Congress',
@@ -85,6 +85,7 @@ export default {
       'speechMean',
       'initialSentence',
       'initalValue',
+      'initialSpeech',
     ]),
   },
   methods: {
@@ -100,16 +101,18 @@ export default {
       this.fetchSpeechMean({ payload });
     },
     changeSentence(direction) {
+      // const speech = this.initialSpeech;
+      // console.log(speech);
       let value = this.initalValue;
       if (direction === 'up') {
         value += 1;
-        console.log(value);
       } else if (direction === 'down') {
         value -= 1;
-        console.log(value);
       }
       const payload = {
         value,
+        // value: this.value,
+        speech: this.initialSpeech,
       };
       this.fetchSpeechSentenceSentiment({ payload });
     },
