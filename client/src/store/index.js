@@ -11,14 +11,14 @@ export default new Vuex.Store({
     speechMean: 0.11,
     initialSentence: 'Thank you very much.',
     initalValue: 0,
-    initialSpeech: 'Remarks by President Trump at Tax Reform Event',
+    selectedSpeech: 'Remarks by President Trump at Tax Reform Event',
   },
 
   getters: {
     speechMean: (state) => state.speechMean,
     initialSentence: (state) => state.initialSentence,
     initalValue: (state) => state.initalValue,
-    initialSpeech: (state) => state.initialSpeech,
+    selectedSpeech: (state) => state.selectedSpeech,
   },
 
   actions: {
@@ -37,16 +37,13 @@ export default new Vuex.Store({
     },
     // This action will get the sentiment of a single sentence based on a speech.
     fetchSpeechSentenceSentiment: ({ commit }, { payload }) => {
-      console.log('In Action');
-      console.log(payload.value);
-      commit('setInitialSentence', 'Hi');
-      commit('setInitialValue', payload.value);
-      // const path = 'http://localhost:5000/get_sentiment_by_speech';
-      // axios.post(path, payload)
-      //   .then((res) => {
-      //     console.log(res.data);
-      //     commit('setSpeechMean', res.data);
-      //   });
+      console.log(payload);
+      const path = 'http://localhost:5000/fetch_speech_sentence_sentiment';
+      axios.post(path, payload)
+        .then((res) => {
+          console.log(res.data);
+          commit('setInitialValue', payload.value);
+        });
     },
 
   },
@@ -68,7 +65,7 @@ export default new Vuex.Store({
     },
 
     setInitialSpeeh(state, data) {
-      state.initialSpeech = data;
+      state.selectedSpeech = data;
     },
 
   },

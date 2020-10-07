@@ -25,6 +25,18 @@ def get_sentiment_by_speech():
         speech_mean = speech_object.get_sentiment_by_speech(speech)
     return jsonify(speech_mean)
 
+# This route will get the data for the sentiment by sentence.
+@app.route('/fetch_speech_sentence_sentiment', methods=['GET', 'POST'])
+def fetchSpeechSentenceSentiment():
+    if request.method == 'POST':
+        speech_object = Analysis()
+        post_data = request.get_json()
+        speech_title = post_data['speech']
+        position = post_data['value']
+        # speech = post_data['speech']
+        #speech_mean = speech_object.get_sentiment_by_sentence_by_speech(speech_title, position)
+    return jsonify('HI')
+
 
 if __name__ == '__main__':
     app.run()

@@ -85,7 +85,7 @@ export default {
       'speechMean',
       'initialSentence',
       'initalValue',
-      'initialSpeech',
+      'selectedSpeech',
     ]),
   },
   methods: {
@@ -101,7 +101,6 @@ export default {
       this.fetchSpeechMean({ payload });
     },
     changeSentence(direction) {
-      // const speech = this.initialSpeech;
       // console.log(speech);
       let value = this.initalValue;
       if (direction === 'up') {
@@ -111,8 +110,7 @@ export default {
       }
       const payload = {
         value,
-        // value: this.value,
-        speech: this.initialSpeech,
+        speech: this.selectedSpeech,
       };
       this.fetchSpeechSentenceSentiment({ payload });
     },
