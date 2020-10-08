@@ -46,12 +46,21 @@ class Analysis():
         print(speech_in_list[position])
         return speech_in_list[position]
 
+    def get_speech_length(self, speech_title):
+        # I have to find the spefic speech that holds the title that the user wants.
+        speech_JSON = self.examine.find_specific_speech(self.textObject, speech_title)
+        # Getting the actual speech out of the JSON.
+        speech_text = self.examine.get_speech_text(speech_JSON)
+        speech_in_list = self.support.turn_speech_string_to_list(speech_text)
+        return len(speech_in_list)
+
     def get_sentiment_by_sentence_by_speech(self, speech_title, position):
         # I have to find the spefic speech that holds the title that the user wants.
         speech_JSON = self.examine.find_specific_speech(self.textObject, speech_title)
         # Getting the actual speech out of the JSON.
         speech_text = self.examine.get_speech_text(speech_JSON)
         speech_in_list = self.support.turn_speech_string_to_list(speech_text)
+        print(len(speech_in_list))
         sentence = speech_in_list[position]
         sentence_sentiment = self.examine.get_sentiment_of_sentence(sentence)
         # Making a list to hold the sentence and sentiment to send back to the client side

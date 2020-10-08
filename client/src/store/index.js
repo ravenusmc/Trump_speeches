@@ -9,16 +9,20 @@ export default new Vuex.Store({
   state: {
     oneSpeechChartData: [],
     speechMean: 0.11,
-    initialSentence: 'Thank you very much.',
+    selectedSentence: 'Thank you very much.',
     initalValue: 0,
     selectedSpeech: 'Remarks by President Trump at Tax Reform Event',
+    sentenceSentiment: 0,
+    speechLength: 303, // Speech length for initial speech
   },
 
   getters: {
     speechMean: (state) => state.speechMean,
-    initialSentence: (state) => state.initialSentence,
+    selectedSentence: (state) => state.selectedSentence,
     initalValue: (state) => state.initalValue,
     selectedSpeech: (state) => state.selectedSpeech,
+    sentenceSentiment: (state) => state.sentenceSentiment,
+    speechLength: (state) => state.speechLength,
   },
 
   actions: {
@@ -30,18 +34,19 @@ export default new Vuex.Store({
       axios.post(path, payload)
         .then((res) => {
           const initialValue = 0;
-          commit('setSpeechMean', res.data);
+          commit('setSpeechMean', res.data[0]);
+          commit('setSpeechLength', res.data[1]);
           commit('setInitialSpeeh', payload.speech);
           commit('setInitialValue', initialValue);
         });
     },
     // This action will get the sentiment of a single sentence based on a speech.
     fetchSpeechSentenceSentiment: ({ commit }, { payload }) => {
-      console.log(payload);
       const path = 'http://localhost:5000/fetch_speech_sentence_sentiment';
       axios.post(path, payload)
         .then((res) => {
-          console.log(res.data);
+          commit('setSelectedSentence', res.data[0]);
+          commit('setSentenceSentiment', res.data[1]);
           commit('setInitialValue', payload.value);
         });
     },
@@ -56,8 +61,8 @@ export default new Vuex.Store({
       state.speechMean = data;
     },
 
-    setInitialSentence(state, data) {
-      state.initialSentence = data;
+    setSelectedSentence(state, data) {
+      state.selectedSentence = data;
     },
 
     setInitialValue(state, data) {
@@ -66,6 +71,14 @@ export default new Vuex.Store({
 
     setInitialSpeeh(state, data) {
       state.selectedSpeech = data;
+    },
+
+    setSentenceSentiment(state, data) {
+      state.sentenceSentiment = data;
+    },
+
+    setSpeechLength(state, data) {
+      state.speechLength = data;
     },
 
   },
