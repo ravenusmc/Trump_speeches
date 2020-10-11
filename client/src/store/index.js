@@ -14,6 +14,29 @@ export default new Vuex.Store({
     selectedSpeech: 'Remarks by President Trump at Tax Reform Event',
     sentenceSentiment: 0,
     speechLength: 303, // Speech length for initial speech
+    allSpeechesSentiment: [
+      ['Speech_Title', 'Sentiment'],
+      ["Trump's Remarks On Iran Nuclear Deal", 0.03356339164844319],
+      ['Remarks by the President in Nashville, Tennessee', 0.06784631958331197],
+      ['President Trump addressed the nation on Monday from Fort Myer military base in Arlington, Va., to lay out his military plans for Afghanistan.', 0.08150194547515976],
+      ['Remarks at the Conservative Political Action Conference in National Harbor, Maryland', 0.0817595852055201],
+      ["Trump's speech in Warsaw", 0.09119367868227801],
+      ['President Trumps Address to a Joint Session of Congress', 0.09185193857378847],
+      ['America First, security speech at the Ronald Reagan Building', 0.0919181993655499],
+      ['Trump Declares Opioid Crisis a Public Health Emergency', 0.09254466966966966],
+      ['News Conference with Prime Minister Netanyahu of Israel', 0.09624651188140398],
+      ['Remarks by President Trump on TaxReform', 0.09887185400128176],
+      ['Phoenix Arizona Rally Speech', 0.10226042145249743],
+      ['Remarks by President Trump at Tax Reform Event', 0.10832021401050984],
+      ['President Trump on the Paris Climate Accord', 0.11247572435696192],
+      ['Remarks at the National Rifle Association Leadership Forum in Atlanta, Georgia', 0.12596520373271342],
+      ['inauguration speech', 0.1270178391053391],
+      ['Remarks by the President at the NRCC Dinner', 0.12740312991726302],
+      ['Remarks at the Central Intelligence Agency', 0.1291384869099155],
+      ['Remarks at a Make America Great Again Rally in Melbourne Florida', 0.13552409554383238],
+      ['2017 Boy Scout Jamboree Speech', 0.17546965803625636],
+      ["Remarks With Prime Minister Enda Kenny of Ireland at a St. Patrick's Day Reception", 0.2061718348523904],
+    ],
   },
 
   getters: {
@@ -23,6 +46,7 @@ export default new Vuex.Store({
     selectedSpeech: (state) => state.selectedSpeech,
     sentenceSentiment: (state) => state.sentenceSentiment,
     speechLength: (state) => state.speechLength,
+    allSpeechesSentiment: (state) => state.allSpeechesSentiment,
   },
 
   actions: {

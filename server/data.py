@@ -69,6 +69,7 @@ class Analysis():
 
     def sentiment_of_all_speeches(self):
         sentiment_collection = self.examine.get_sentiment_by_all_speeches(self.textObject)
+        print(sentiment_collection)
 
     def get_most_common_words_by_speech(self, speech_title):
         speech_JSON = self.examine.find_specific_speech(self.textObject, speech_title)
@@ -77,8 +78,8 @@ class Analysis():
         word_and_count = self.support.clean_word_list(words_in_list)
         print(word_and_count)
 
-# test = Analysis()
-# test.start_analysis()
+test = Analysis()
+test.sentiment_of_all_speeches()
 # speech_title = 'Remarks at a Make America Great Again Rally in Melbourne Florida'
 # position = 0
 # test.get_sentence_from_speech(speech_title, position)
