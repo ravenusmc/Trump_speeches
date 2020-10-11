@@ -1,12 +1,43 @@
 <template>
   <div>
-    Speech by word count
+    <GraphCard
+     :typeOne='typeOne'
+     :data='word_and_count_data'
+     :options='chartOptionsOne'>
+    </GraphCard>
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+import GraphCard from '@/components/graphs/GraphCard.vue';
+
 export default {
   name: 'SpeechWordCount',
+  components: {
+    GraphCard,
+  },
+  data() {
+    return {
+      typeOne: 'ColumnChart',
+      chartOptionsOne: {
+        title: 'Word Count',
+        legend: { position: 'top' },
+        colors: ['#333'],
+        height: 600,
+        vAxis: {
+          viewWindow: {
+            min: 0,
+          },
+        },
+      },
+    };
+  },
+  computed: {
+    ...mapGetters([
+      'word_and_count_data',
+    ]),
+  }, // End Computed properties
 };
 </script>
 

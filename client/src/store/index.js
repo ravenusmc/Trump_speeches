@@ -16,41 +16,26 @@ export default new Vuex.Store({
     speechLength: 303, // Speech length for initial speech
     word_and_count_data: [
       ['Word', 'Count'],
-      ['you', 44],
-      ['tax', 60],
-      ['\x19s', 68],
-      ['\x19re', 45],
-      ['(applause.)', 64],
-      ['great', 15],
-      ['', 73], ['us', 10],
-      ['much', 10],
-      ['we', 103],
-      ['our', 78],
-      ['people', 16],
-      ['their', 19],
       ['working', 10],
-      ['get', 12],
-      ['an', 10],
-      ['\x14', 66],
       ['money', 10],
-      ['than', 13],
-      ['even', 10],
       ['good', 10],
-      ['right', 18],
-      ['\x19t', 24],
-      ['think', 11],
-      ['time', 11],
-      ['american', 30],
-      ['they', 47],
       ['framework', 10],
-      ['taxes', 15],
-      ['make', 11],
-      ['bring', 10],
-      ['jobs', 17],
-      ['country', 11],
-      ['businesses', 15],
-      ['companies', 11],
       ['america', 10],
+      ['country', 11],
+      ['companies', 11],
+      ['great', 15],
+      ['taxes', 15],
+      ['businesses', 15],
+      ['people', 16],
+      ['jobs', 17],
+      ['right', 18],
+      ['their', 19],
+      ['american', 30],
+      ['you', 44],
+      ['they', 47],
+      ['tax', 60],
+      ['our', 78],
+      ['we', 103],
     ],
     allSpeechesSentiment: [
       ['Speech_Title', 'Sentiment'],
@@ -85,6 +70,7 @@ export default new Vuex.Store({
     sentenceSentiment: (state) => state.sentenceSentiment,
     speechLength: (state) => state.speechLength,
     allSpeechesSentiment: (state) => state.allSpeechesSentiment,
+    word_and_count_data: (state) => state.word_and_count_data,
   },
 
   actions: {
@@ -102,6 +88,7 @@ export default new Vuex.Store({
           commit('setInitialValue', initialValue);
         });
     },
+
     // This action will get the sentiment of a single sentence based on a speech.
     fetchSpeechSentenceSentiment: ({ commit }, { payload }) => {
       const path = 'http://localhost:5000/fetch_speech_sentence_sentiment';

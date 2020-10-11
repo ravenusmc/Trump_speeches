@@ -21,7 +21,7 @@ export default {
     return {
       typeOne: 'ColumnChart',
       chartOptionsOne: {
-        title: 'Sentiment of all Speeches',
+        title: 'Word Count',
         legend: { position: 'top' },
         colors: ['#333'],
         height: 600,

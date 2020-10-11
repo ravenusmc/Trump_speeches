@@ -62,7 +62,11 @@ class Support():
                 and current_word != 'said,' and current_word != 'he'  and current_word != 'way,' and current_word != 'we.ve'
                 and current_word != 'back' and current_word != 'that.s'  and current_word != 'at' and current_word != 'we.re'
                 and current_word != 'over' and current_word != 'new'  and current_word != 'i.ve' and current_word != 'got'
-                and current_word != 'look' and current_word != 'what.s' and current_word != 'were' and current_word != '\x19s'):
+                and current_word != 'look' and current_word != 'what.s' and current_word != 'were' and current_word != '\x19s'
+                and current_word != '' and current_word != '\x19re' and current_word != '(applause.)' and current_word != '\x14'
+                and current_word != 'an' and current_word != '\x14' and current_word != 'make' and current_word != 'bring'
+                and current_word != 'much' and current_word != 'get' and current_word != 'than' and current_word != 'even'
+                and current_word != 'think'):
                     word_count += 1
                     if (word_count >= 10):
                         word_and_count[current_word] = word_count
