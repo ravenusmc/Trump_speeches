@@ -177,4 +177,12 @@ span {
   align-items: center;
 }
 
+@media only all and (max-width: 1000px) {
+
+  #first-data-area {
+    grid-template-columns: 1fr;
+  }
+
+}
+
 </style>

@@ -64,5 +64,16 @@ class Examine():
             count += 1
         return sentiment_collection
 
-    def build_speech_into_lost(self, speech_text):
+    def build_speech_into_list(self, speech_text):
         return list(speech_text.split(" "))
+
+    def build_chart_data_word_and_count(self, word_and_count):
+        word_and_count_chart_data = []
+        columns = ['Word', 'Count']
+        word_and_count_chart_data.append(columns)
+        for word, count in word_and_count.items():
+            rows = []
+            rows.append(word)
+            rows.append(count)
+            word_and_count_chart_data.append(rows)
+        return word_and_count_chart_data

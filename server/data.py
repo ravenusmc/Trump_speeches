@@ -69,19 +69,21 @@ class Analysis():
 
     def sentiment_of_all_speeches(self):
         sentiment_collection = self.examine.get_sentiment_by_all_speeches(self.textObject)
-        print(sentiment_collection)
 
     def get_most_common_words_by_speech(self, speech_title):
         speech_JSON = self.examine.find_specific_speech(self.textObject, speech_title)
         speech_text = self.examine.get_speech_text(speech_JSON)
-        words_in_list = self.examine.build_speech_into_lost(speech_text)
+        words_in_list = self.examine.build_speech_into_list(speech_text)
         word_and_count = self.support.clean_word_list(words_in_list)
-        print(word_and_count)
+        word_and_count_chart_data = self.examine.build_chart_data_word_and_count(word_and_count)
+        print(word_and_count_chart_data)
+        return word_and_count_chart_data
 
+speech_title = 'Remarks by President Trump at Tax Reform Event'
+position = 0
 test = Analysis()
-test.sentiment_of_all_speeches()
-# speech_title = 'Remarks at a Make America Great Again Rally in Melbourne Florida'
-# position = 0
+test.get_most_common_words_by_speech(speech_title)
+
 # test.get_sentence_from_speech(speech_title, position)
 #Remarks at a Make America Great Again Rally in Melbourne Florida => eightteen.json
 
