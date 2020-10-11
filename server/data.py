@@ -43,7 +43,6 @@ class Analysis():
         # Getting the actual speech out of the JSON.
         speech_text = self.examine.get_speech_text(speech_JSON)
         speech_in_list = self.support.turn_speech_string_to_list(speech_text)
-        print(speech_in_list[position])
         return speech_in_list[position]
 
     def get_speech_length(self, speech_title):
@@ -60,9 +59,8 @@ class Analysis():
         # Getting the actual speech out of the JSON.
         speech_text = self.examine.get_speech_text(speech_JSON)
         speech_in_list = self.support.turn_speech_string_to_list(speech_text)
-        print(len(speech_in_list))
         sentence = speech_in_list[position]
-        sentence_sentiment = self.examine.get_sentiment_of_sentence(sentence)
+        sentence_sentiment = format(self.examine.get_sentiment_of_sentence(sentence), '.2f')
         # Making a list to hold the sentence and sentiment to send back to the client side
         sentence_and_sentiment_list = []
         sentence_and_sentiment_list.append(sentence)

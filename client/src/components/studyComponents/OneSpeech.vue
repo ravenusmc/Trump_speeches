@@ -5,7 +5,7 @@
 
       <div class="card" style="width: 35rem;">
         <div class="card-body">
-          <h5 class="card-title">Sentiment of a Speech</h5>
+          <h5 class="card-title center">Sentiment of a Speech</h5>
           <!-- Bootstrap From  -->
           <form @submit="submitForm">
             <div class="form-group">
@@ -26,7 +26,7 @@
 
       <div class="card" style="width: 35rem;">
         <div class="card-body">
-          <h5 class="card-title">Sentence Sentiment</h5>
+          <h5 class="card-title center">Sentence Sentiment</h5>
           <div class='average-sentiment-div'>
             <div class='sentenceArea'>
               <p><span>Current Sentence:</span> {{ this.selectedSentence }}</p>

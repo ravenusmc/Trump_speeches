@@ -1,9 +1,12 @@
 <template>
   <div>
-    <div>
+
+    <div class='title-area'>
       <h1 class='center'>Background</h1>
     </div>
+
     <section>
+
         <div>
           <p>
             Back in the spring of 2018, I first heard about Natural Language
@@ -16,6 +19,7 @@
             projects using NLP. This is one of them and it won't be the last.
           </p>
         </div>
+
         <div>
           <p>
             This project is focusing on about twenty speeches that I have that Trump
@@ -26,8 +30,7 @@
             words in his speeches to see what they show - if anything at all.
           </p>
         </div>
-      <div>
-      </div>
+
     </section>
   </div>
 </template>
@@ -40,6 +43,10 @@ export default {
 
 <style scoped>
 
+.title-area {
+  margin-top: 50px;
+}
+
 section {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -49,4 +56,5 @@ section {
 section div {
   margin: 0 5px 0 5px;
 }
+
 </style>
