@@ -75,6 +75,11 @@ export default new Vuex.Store({
 
   actions: {
 
+    fireActions: ({ dispatch }, { payload }) => {
+      dispatch('fetchSpeechMean', { payload });
+      dispatch('fetchWordCount', { payload });
+    },
+
     // This action will get the data for the speech selected. Remember that
     // the action appears to NEED to take 2 arguments, not 1.
     fetchSpeechMean: ({ commit }, { payload }) => {
@@ -97,6 +102,15 @@ export default new Vuex.Store({
           commit('setSelectedSentence', res.data[0]);
           commit('setSentenceSentiment', res.data[1]);
           commit('setInitialValue', payload.value);
+        });
+    },
+
+    fetchWordCount: ({ commit }, { payload }) => {
+      const path = 'http://localhost:5000/fetch_word_count';
+      axios.post(path, payload)
+        .then((res) => {
+          res.data.sort((a, b) => a[1] - b[1]);
+          commit('setWordAndCountData', res.data);
         });
     },
 
@@ -128,6 +142,10 @@ export default new Vuex.Store({
 
     setSpeechLength(state, data) {
       state.speechLength = data;
+    },
+
+    setWordAndCountData(state, data) {
+      state.word_and_count_data = data;
     },
 
   },

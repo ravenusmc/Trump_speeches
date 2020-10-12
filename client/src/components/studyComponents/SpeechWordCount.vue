@@ -1,10 +1,12 @@
 <template>
   <div>
+
     <GraphCard
      :typeOne='typeOne'
      :data='word_and_count_data'
      :options='chartOptionsOne'>
     </GraphCard>
+
   </div>
 </template>
 

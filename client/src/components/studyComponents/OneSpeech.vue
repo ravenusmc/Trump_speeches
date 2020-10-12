@@ -108,7 +108,7 @@ export default {
   },
   methods: {
     ...mapActions([
-      'fetchSpeechMean',
+      'fireActions',
       'fetchSpeechSentenceSentiment',
     ]),
     submitForm(evt) {
@@ -116,7 +116,7 @@ export default {
       const payload = {
         speech: this.speech,
       };
-      this.fetchSpeechMean({ payload });
+      this.fireActions({ payload });
     },
     changeSentence(direction) {
       let value = this.initalValue;

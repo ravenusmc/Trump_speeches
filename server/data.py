@@ -76,7 +76,6 @@ class Analysis():
         words_in_list = self.examine.build_speech_into_list(speech_text)
         word_and_count = self.support.clean_word_list(words_in_list)
         word_and_count_chart_data = self.examine.build_chart_data_word_and_count(word_and_count)
-        print(word_and_count_chart_data)
         return word_and_count_chart_data
 
 speech_title = 'Remarks by President Trump at Tax Reform Event'

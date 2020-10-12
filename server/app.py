@@ -41,6 +41,16 @@ def fetchSpeechSentenceSentiment():
         sentence_and_sentiment_list = speech_object.get_sentiment_by_sentence_by_speech(speech_title, position)
     return jsonify(sentence_and_sentiment_list)
 
+# This route will get the data for the sentiment by sentence.
+@app.route('/fetch_word_count', methods=['GET', 'POST'])
+def fetch_word_count():
+    if request.method == 'POST':
+        speech_object = Analysis()
+        post_data = request.get_json()
+        speech_title = post_data['speech']
+        word_and_count_chart_data = speech_object.get_most_common_words_by_speech(speech_title)
+    return jsonify(word_and_count_chart_data)
+
 
 if __name__ == '__main__':
     app.run()
