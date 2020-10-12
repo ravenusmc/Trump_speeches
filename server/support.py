@@ -66,7 +66,12 @@ class Support():
                 and current_word != '' and current_word != '\x19re' and current_word != '(applause.)' and current_word != '\x14'
                 and current_word != 'an' and current_word != '\x14' and current_word != 'make' and current_word != 'bring'
                 and current_word != 'much' and current_word != 'get' and current_word != 'than' and current_word != 'even'
-                and current_word != 'think'):
+                and current_word != 'think' and current_word != 'really' and current_word != 'right' and current_word != 't'
+                and current_word != 'remember' and current_word != 'up' and current_word != 'didn.t' and current_word != 'right.'
+                and current_word != 'know,' and current_word != 'folks.' and current_word != 'go' and current_word != 'see'
+                and current_word != 'lot' and current_word != 'out' and current_word != 'if' and current_word != 'had'
+                and current_word != 'audience' and current_word != '[laughter]' and current_word != 'both' and current_word != 'something'
+                and current_word != 'mr.'):
                     word_count += 1
                     if (word_count >= 10):
                         word_and_count[current_word] = word_count
