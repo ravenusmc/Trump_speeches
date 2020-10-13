@@ -1,5 +1,8 @@
 # This class will focus on providing methods that support the rest of
 # the application.
+#importing supporting libraries
+import re
+from collections import Counter
 
 #Importing files I built
 from speeches import *
@@ -22,16 +25,25 @@ class Support():
         speech_in_list = list(speech_text.split(". "))
         return speech_in_list
 
+    def purge_extra_characters(self, words_in_list):
+        words = []
+        for word in words_in_list:
+            word = re.split(r'[,\s.]', word)
+            words.append(word[0])
+        return words
+
     def clean_word_list(self, words_in_list):
         word_and_count = {}
         len_count = 0
+        # removing periods and commas at the end of each word
+        words = self.purge_extra_characters(words_in_list)
         #looping through the list
-        while len_count < len(words_in_list):
+        while len_count < len(words):
             word_count = 0
             #I assign the current_word to the current position of the word_count counter
-            current_word = words_in_list[len_count].lower()
+            current_word = words[len_count].lower()
             #I then loop through the words again seeing is certain conditions are met.
-            for word in words_in_list:
+            for word in words:
                 word = word.lower()
                 if (current_word == word and current_word != 'and' and current_word != 'the' and current_word != 'The'
                 and current_word != 'on' and current_word != 'of' and current_word != 'But' and current_word != 'from' and current_word != 'any'
@@ -71,7 +83,12 @@ class Support():
                 and current_word != 'know,' and current_word != 'folks.' and current_word != 'go' and current_word != 'see'
                 and current_word != 'lot' and current_word != 'out' and current_word != 'if' and current_word != 'had'
                 and current_word != 'audience' and current_word != '[laughter]' and current_word != 'both' and current_word != 'something'
-                and current_word != 'mr.'):
+                and current_word != 'mr.' and current_word != 'that’s' and current_word != 'it’s' and current_word != 'doing'
+                and current_word != '(applause)' and current_word != 'better' and current_word != 'way' and current_word != "we're"
+                and current_word != '—' and current_word != 'said' and current_word != '(applause' and current_word != 'today'
+                and current_word != '\x19t' and current_word != 'lower' and current_word != 'percent' and current_word != 'again'
+                and current_word != 'long' and current_word != 'time' and current_word != 'tonight' and current_word != 'its'
+                and current_word != 'am' and current_word != '\x19ve' and current_word != 'his'):
                     word_count += 1
                     if (word_count >= 10):
                         word_and_count[current_word] = word_count

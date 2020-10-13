@@ -49,6 +49,7 @@ def fetch_word_count():
         post_data = request.get_json()
         speech_title = post_data['speech']
         word_and_count_chart_data = speech_object.get_most_common_words_by_speech(speech_title)
+        print(word_and_count_chart_data)
     return jsonify(word_and_count_chart_data)
 
 
