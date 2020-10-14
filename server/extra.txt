@@ -1,3 +1,1 @@
 
-['across', 10], ['america', 29], ['one', 16], ['great', 17],  ['their', 19],
-['people', 16], ['they', 35], ['americans', 13], ['his', 11]]

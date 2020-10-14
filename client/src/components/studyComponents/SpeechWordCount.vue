@@ -1,6 +1,6 @@
 <template>
   <div>
-
+    <h5 class='center'><span>Word Count for:</span> {{ this.selectedSpeech }}</h5>
     <GraphCard
      :typeOne='typeOne'
      :data='word_and_count_data'
@@ -37,6 +37,7 @@ export default {
   },
   computed: {
     ...mapGetters([
+      'selectedSpeech',
       'word_and_count_data',
     ]),
   }, // End Computed properties
@@ -44,4 +45,7 @@ export default {
 </script>
 
 <style scoped>
+span {
+  font-weight: bold;
+}
 </style>

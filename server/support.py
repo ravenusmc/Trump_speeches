@@ -88,7 +88,9 @@ class Support():
                 and current_word != '—' and current_word != 'said' and current_word != '(applause' and current_word != 'today'
                 and current_word != '\x19t' and current_word != 'lower' and current_word != 'percent' and current_word != 'again'
                 and current_word != 'long' and current_word != 'time' and current_word != 'tonight' and current_word != 'its'
-                and current_word != 'am' and current_word != '\x19ve' and current_word != 'his'):
+                and current_word != 'am' and current_word != '\x19ve' and current_word != 'his' and current_word != '--'
+                and current_word != '(laughter' and current_word != 'don’t' and current_word != 'some' and current_word != 'we’re'
+                and current_word != 'where' and current_word != 'would' and current_word != 'under'):
                     word_count += 1
                     if (word_count >= 10):
                         word_and_count[current_word] = word_count
