@@ -20,17 +20,6 @@ class Speeches():
         self.eigth_speech = pd.read_json('./data/eight.json', typ='series')
         self.ninth_speech = pd.read_json('./data/nine.json', typ='series')
         self.tenth_speech = pd.read_json('./data/ten.json', typ='series')
-        self.eleventh_speech = pd.read_json('./data/eleven.json', typ='series')
-        self.twelve_speech = pd.read_json('./data/twelve.json', typ='series')
-        self.thirteen_speech = pd.read_json('./data/thirteen.json', typ='series')
-        self.fourteen_speech = pd.read_json('./data/fourteen.json', typ='series')
-        self.fifteen_speech = pd.read_json('./data/fifteen.json', typ='series')
-        self.sixteen_speech = pd.read_json('./data/sixteen.json', typ='series')
-        self.seventeen_speech = pd.read_json('./data/seventeen.json', typ='series')
-        self.eightteen_speech = pd.read_json('./data/eightteen.json', typ='series')
-        self.nineteen_speech = pd.read_json('./data/nineteen.json', typ='series')
-        self.twenty_speech = pd.read_json('./data/twenty.json', typ='series')
-        self.twenty_one_speech = pd.read_json('./data/twentyone.json', typ='series')
         self.all_speeches = [self.first_speech, self.second_speech, self.third_speech,
         self.fourth_speech, self.fifth_speech, self.sixth_speech, self.seventh_speech,
         self.eigth_speech, self.ninth_speech, self.tenth_speech, self.eleventh_speech,
