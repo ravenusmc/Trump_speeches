@@ -8,7 +8,13 @@
       <Background/>
       <OneSpeech/>
       <SpeechWordCount/>
-      <SentimentChart/>
+      <button v-on:click="say()">{{ this.buttonTitle }}</button>
+      <div v-if="showTrumpSpeeches">
+        <SentimentChart/>
+      </div>
+      <div v-else>
+        Now you don't
+      </div>
     </section>
 
     <Footer/>
@@ -36,6 +42,26 @@ export default {
     SentimentChart,
     SpeechWordCount,
     Footer,
+  },
+  data() {
+    return {
+      buttonTitle: 'Show Obama Speeches',
+      showObamaSpeeches: false,
+      showTrumpSpeeches: true,
+    };
+  },
+  methods: {
+    say() {
+      if (this.showTrumpSpeeches === true) {
+        this.buttonTitle = 'Show Trump Speeches';
+        this.showObamaSpeeches = true;
+        this.showTrumpSpeeches = false;
+      } else if (this.showObamaSpeeches === true) {
+        this.buttonTitle = 'Show Obama Speeches';
+        this.showTrumpSpeeches = true;
+        this.showObamaSpeeches = false;
+      }
+    },
   },
 };
 </script>

@@ -21,7 +21,7 @@ export default {
     return {
       typeOne: 'ColumnChart',
       chartOptionsOne: {
-        title: 'Word Count',
+        title: 'Sentiment of Trump Speeches',
         legend: { position: 'top' },
         colors: ['#333'],
         height: 600,
