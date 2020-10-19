@@ -60,6 +60,19 @@ export default new Vuex.Store({
       ['2017 Boy Scout Jamboree Speech', 0.17546965803625636],
       ["Remarks With Prime Minister Enda Kenny of Ireland at a St. Patrick's Day Reception", 0.2061718348523904],
     ],
+    ObamaSpeechesSentiment: [
+      ['Speech_Title', 'Sentiment'],
+      ['Remarks at the Conservative Political Action Conference in National Harbor, Maryland', 0.10386522967772965],
+      ['Speech to the American Medical Association', 0.1065579509379509],
+      ['First Press Statement on the Attempted Christmas Day Terrorist Bombing Attack in Detroit', 0.1299366304554984],
+      ['Speech on 2010 Budget Sent to Congress', 0.08737279883621349],
+      ['Tribal Nations Conference Address', 0.12084064208392173],
+      ['Statement on the Sandy Hook Elementary School Shootings in Newtown, Connecticut', 0.15808531746031745],
+      ['Address to the People of Northern Ireland', 0.10619824863857524],
+      ['Statement on Afghanistan', 0.12205013384361209],
+      ['Address on Iran at American University', 0.07702010747105681],
+      ['Afghanistan Troop Reduction Address to the Nation', 0.07917152006069532]
+    ]
   },
 
   getters: {

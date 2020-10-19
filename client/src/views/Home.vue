@@ -13,7 +13,7 @@
         <SentimentChart/>
       </div>
       <div v-else>
-        Now you don't
+        <SentimentChartObama/>
       </div>
     </section>
 
@@ -30,6 +30,7 @@ import Header from '@/components/home/Header.vue';
 import OneSpeech from '@/components/studyComponents/OneSpeech.vue';
 import SpeechWordCount from '@/components/studyComponents/SpeechWordCount.vue';
 import SentimentChart from '@/components/studyComponents/SentimentChart.vue';
+import SentimentChartObama from '@/components/studyComponents/SentimentChartObama.vue';
 import Background from '@/components/home/Background.vue';
 
 export default {
@@ -40,6 +41,7 @@ export default {
     Background,
     OneSpeech,
     SentimentChart,
+    SentimentChartObama,
     SpeechWordCount,
     Footer,
   },

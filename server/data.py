@@ -12,6 +12,7 @@ from pathlib import Path
 from speeches import *
 from examine import *
 from support import *
+from o_speeches import *
 
 class Analysis():
 
@@ -19,6 +20,7 @@ class Analysis():
         self.textObject = Speeches()
         self.examine = Examine()
         self.support = Support()
+        self.o_speeches = obama_speeches()
 
     def start_analysis(self):
         speech_text = self.examine.get_speech_text(self.textObject)
@@ -68,7 +70,10 @@ class Analysis():
         return sentence_and_sentiment_list
 
     def sentiment_of_all_speeches(self):
-        sentiment_collection = self.examine.get_sentiment_by_all_speeches(self.textObject)
+        # Use self.o_speeches for Obama speeches, self.textObject for Trump speeches
+        sentiment_collection = self.examine.get_sentiment_by_all_speeches(self.o_speeches)
+        print(sentiment_collection)
+
 
     def get_most_common_words_by_speech(self, speech_title):
         speech_JSON = self.examine.find_specific_speech(self.textObject, speech_title)
@@ -81,7 +86,7 @@ class Analysis():
 speech_title = 'Remarks by President Trump at Tax Reform Event'
 position = 0
 test = Analysis()
-test.get_most_common_words_by_speech(speech_title)
+test.sentiment_of_all_speeches()
 
 # test.get_sentence_from_speech(speech_title, position)
 #Remarks at a Make America Great Again Rally in Melbourne Florida => eightteen.json

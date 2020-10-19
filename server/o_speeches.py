@@ -4,25 +4,30 @@
 import numpy as np
 import pandas as pd
 import json
-# from textblob import TextBlob
+# import os
+# print(os.getcwd())
 
 #This class is what will be used to get all the speeches set up.
-class Speeches():
+class obama_speeches():
 
     def __init__(self):
-        self.first_speech = pd.read_json('./data/one.json', typ='series')
-        self.second_speech = pd.read_json('./data/two.json', typ='series')
-        self.third_speech = pd.read_json('./data/three.json', typ='series')
-        self.fourth_speech = pd.read_json('./data/four.json', typ='series')
-        self.fifth_speech = pd.read_json('./data/five.json', typ='series')
-        self.sixth_speech = pd.read_json('./data/six.json', typ='series')
-        self.seventh_speech = pd.read_json('./data/seven.json', typ='series')
-        self.eigth_speech = pd.read_json('./data/eight.json', typ='series')
-        self.ninth_speech = pd.read_json('./data/nine.json', typ='series')
-        self.tenth_speech = pd.read_json('./data/ten.json', typ='series')
+        self.first_speech = pd.read_json('./data/o_speech_one.json', typ='series')
+        self.second_speech = pd.read_json('./data/o_speech_two.json', typ='series')
+        self.third_speech = pd.read_json('./data/o_speech_three.json', typ='series')
+        self.fourth_speech = pd.read_json('./data/o_speech_four.json', typ='series')
+        self.fifth_speech = pd.read_json('./data/o_speech_five.json', typ='series')
+        self.sixth_speech = pd.read_json('./data/o_speech_six.json', typ='series')
+        self.seventh_speech = pd.read_json('./data/o_speech_seven.json', typ='series')
+        self.eigth_speech = pd.read_json('./data/o_speech_eight.json', typ='series')
+        self.ninth_speech = pd.read_json('./data/o_speech_nine.json', typ='series')
+        self.tenth_speech = pd.read_json('./data/o_speech_ten.json', typ='series')
         self.all_speeches = [self.first_speech, self.second_speech, self.third_speech,
         self.fourth_speech, self.fifth_speech, self.sixth_speech, self.seventh_speech,
-        self.eigth_speech, self.ninth_speech, self.tenth_speech, self.eleventh_speech,
-        self.twelve_speech, self.thirteen_speech, self.fourteen_speech, self.fifteen_speech,
-        self.sixteen_speech, self.seventeen_speech, self.eightteen_speech, self.nineteen_speech,
-        self.twenty_speech, self.twenty_one_speech]
+        self.eigth_speech, self.ninth_speech, self.tenth_speech]
+
+#     def test_working(self):
+#         print(self.tenth_speech)
+#
+#
+# test = Obama()
+# test.test_working()

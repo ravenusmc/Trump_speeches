@@ -4,7 +4,6 @@
 import numpy as np
 import pandas as pd
 import json
-# from textblob import TextBlob
 
 #This class is what will be used to get all the speeches set up.
 class Speeches():
@@ -37,3 +36,10 @@ class Speeches():
         self.twelve_speech, self.thirteen_speech, self.fourteen_speech, self.fifteen_speech,
         self.sixteen_speech, self.seventeen_speech, self.eightteen_speech, self.nineteen_speech,
         self.twenty_speech, self.twenty_one_speech]
+
+    def test_working(self):
+        print(self.first_speech)
+
+
+test = Speeches()
+test.test_working()
