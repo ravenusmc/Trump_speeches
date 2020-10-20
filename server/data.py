@@ -72,7 +72,6 @@ class Analysis():
     def sentiment_of_all_speeches(self):
         # Use self.o_speeches for Obama speeches, self.textObject for Trump speeches
         sentiment_collection = self.examine.get_sentiment_by_all_speeches(self.o_speeches)
-        print(sentiment_collection)
 
 
     def get_most_common_words_by_speech(self, speech_title):
@@ -83,10 +82,10 @@ class Analysis():
         word_and_count_chart_data = self.examine.build_chart_data_word_and_count(word_and_count)
         return word_and_count_chart_data
 
-speech_title = 'Remarks by President Trump at Tax Reform Event'
-position = 0
-test = Analysis()
-test.sentiment_of_all_speeches()
+# speech_title = 'Remarks by President Trump at Tax Reform Event'
+# position = 0
+# test = Analysis()
+# test.sentiment_of_all_speeches()
 
 # test.get_sentence_from_speech(speech_title, position)
 #Remarks at a Make America Great Again Rally in Melbourne Florida => eightteen.json

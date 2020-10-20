@@ -2,7 +2,7 @@
   <div>
     <GraphCard
      :typeOne='typeOne'
-     :data='allSpeechesSentiment'
+     :data='ObamaSpeechesSentiment'
      :options='chartOptionsOne'>
     </GraphCard>
   </div>
@@ -36,6 +36,7 @@ export default {
   computed: {
     ...mapGetters([
       'allSpeechesSentiment',
+      'ObamaSpeechesSentiment',
     ]),
   }, // End Computed properties
 };

@@ -62,17 +62,18 @@ export default new Vuex.Store({
     ],
     ObamaSpeechesSentiment: [
       ['Speech_Title', 'Sentiment'],
-      ['Remarks at the Conservative Political Action Conference in National Harbor, Maryland', 0.10386522967772965],
-      ['Speech to the American Medical Association', 0.1065579509379509],
-      ['First Press Statement on the Attempted Christmas Day Terrorist Bombing Attack in Detroit', 0.1299366304554984],
-      ['Speech on 2010 Budget Sent to Congress', 0.08737279883621349],
-      ['Tribal Nations Conference Address', 0.12084064208392173],
-      ['Statement on the Sandy Hook Elementary School Shootings in Newtown, Connecticut', 0.15808531746031745],
-      ['Address to the People of Northern Ireland', 0.10619824863857524],
-      ['Statement on Afghanistan', 0.12205013384361209],
-      ['Address on Iran at American University', 0.07702010747105681],
-      ['Afghanistan Troop Reduction Address to the Nation', 0.07917152006069532]
-    ]
+      ['Address on Iran at American University', 0.08],
+      ['Afghanistan Troop Reduction Address to the Nation', 0.08],
+      ['Speech on 2010 Budget Sent to Congress', 0.09],
+      ['Remarks at the Conservative Political Action Conference in National Harbor, Maryland', 0.10],
+      ['Speech to the American Medical Association', 0.11],
+      ['Address to the People of Northern Ireland', 0.11],
+      ['Tribal Nations Conference Address', 0.12],
+      ['Statement on Afghanistan', 0.12],
+      ['First Press Statement on the Attempted Christmas Day Terrorist Bombing Attack in Detroit', 0.13],
+      ['Statement on the Sandy Hook Elementary School Shootings in Newtown, Connecticut', 0.16],
+
+    ],
   },
 
   getters: {
@@ -84,6 +85,7 @@ export default new Vuex.Store({
     speechLength: (state) => state.speechLength,
     allSpeechesSentiment: (state) => state.allSpeechesSentiment,
     word_and_count_data: (state) => state.word_and_count_data,
+    ObamaSpeechesSentiment: (state) => state.ObamaSpeechesSentiment,
   },
 
   actions: {

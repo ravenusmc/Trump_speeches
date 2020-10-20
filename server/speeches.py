@@ -37,9 +37,9 @@ class Speeches():
         self.sixteen_speech, self.seventeen_speech, self.eightteen_speech, self.nineteen_speech,
         self.twenty_speech, self.twenty_one_speech]
 
-    def test_working(self):
-        print(self.first_speech)
+    # def test_working(self):
+    #     print(self.first_speech)
 
 
-test = Speeches()
-test.test_working()
+# test = Speeches()
+# test.test_working()

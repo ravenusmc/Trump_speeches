@@ -59,7 +59,7 @@ class Examine():
             sentiment_sentence_list = self.build_sentiment_list(speech_textblob_version)
             sentiment_mean_by_speech = self.get_average_from_list(sentiment_sentence_list)
             rows.append(speech_title)
-            rows.append(sentiment_mean_by_speech)
+            rows.append(format(sentiment_mean_by_speech, '.2f'))
             sentiment_collection.append(rows)
             count += 1
         return sentiment_collection

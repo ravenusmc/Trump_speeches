@@ -8,7 +8,9 @@
       <Background/>
       <OneSpeech/>
       <SpeechWordCount/>
-      <button v-on:click="say()">{{ this.buttonTitle }}</button>
+      <div class='center'>
+        <button class="btn btn-outline-dark" v-on:click="say()">{{ this.buttonTitle }}</button>
+      </div>
       <div v-if="showTrumpSpeeches">
         <SentimentChart/>
       </div>
@@ -23,7 +25,6 @@
 </template>
 
 <script>
-// @ is an alias to /src
 import Navbar from '@/components/view/Navbar.vue';
 import Footer from '@/components/view/Footer.vue';
 import Header from '@/components/home/Header.vue';
