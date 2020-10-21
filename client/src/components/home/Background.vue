@@ -57,4 +57,13 @@ section div {
   margin: 0 5px 0 5px;
 }
 
+@media only all and (max-width: 1000px) {
+
+  section {
+  grid-template-columns: 1fr;
+  margin: 50px 5% 50px 5%;
+  }
+
+}
+
 </style>

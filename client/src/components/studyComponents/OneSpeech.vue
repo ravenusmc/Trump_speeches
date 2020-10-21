@@ -3,7 +3,8 @@
 
     <section id='first-data-area'>
 
-      <div class="card" style="width: 35rem;">
+      <!-- <div class="card" style="width: 35rem;"> -->
+      <div class="card">
         <div class="card-body">
           <h5 class="card-title center">Sentiment of a Speech</h5>
           <!-- Bootstrap From  -->
@@ -24,7 +25,8 @@
         </div>
       </div>
 
-      <div class="card" style="width: 35rem;">
+      <!-- <div class="card" style="width: 35rem;"> -->
+      <div class="card">
         <div class="card-body">
           <h5 class="card-title center">Sentence Sentiment</h5>
           <div class='average-sentiment-div'>
@@ -177,10 +179,33 @@ span {
   align-items: center;
 }
 
-@media only all and (max-width: 1000px) {
+@media only all and (max-width: 1500px) {
+
+  .card {
+    width: 35rem;
+  }
+
+}
+
+@media only all and (max-width: 1200px) {
+
+  .card {
+    width: 30rem;
+  }
+
+}
+
+@media only all and (max-width: 1030px) {
 
   #first-data-area {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card {
+    width: 25rem;
   }
 
 }
