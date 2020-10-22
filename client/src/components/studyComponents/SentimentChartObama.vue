@@ -24,6 +24,10 @@ export default {
         title: 'Sentiment of Obama Speeches',
         legend: { position: 'top' },
         colors: ['#333'],
+        animation: {
+          duration: 1000,
+          easing: 'linear',
+        },
         height: 600,
         vAxis: {
           viewWindow: {

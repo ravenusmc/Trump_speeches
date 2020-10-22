@@ -25,6 +25,10 @@ export default {
         legend: { position: 'top' },
         colors: ['#333'],
         height: 600,
+        animation: {
+          duration: 1000,
+          easing: 'linear',
+        },
         vAxis: {
           viewWindow: {
             min: 0,
