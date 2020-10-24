@@ -72,7 +72,6 @@ export default new Vuex.Store({
       ['Statement on Afghanistan', 0.12],
       ['First Press Statement on the Attempted Christmas Day Terrorist Bombing Attack in Detroit', 0.13],
       ['Statement on the Sandy Hook Elementary School Shootings in Newtown, Connecticut', 0.16],
-
     ],
   },
 

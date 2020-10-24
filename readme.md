@@ -1,10 +1,11 @@
 # Trump Speeches
 ## Intro
 
-This project's aim is to use some basic Natural language processing to examine
-Trump's speeches. This project is more of a proof of concept in that I did not
-really clean all the speeches that I had. Thus, some of the sentiment that I get back
-may not be 100% right. 
+This project's aim is to use some basic Natural language processing, the text blob library,
+to examine Trump's speeches. This project is more of a proof of concept in that I did not
+focus on ensuring that the sentences, within each speech, are 100% clean - meaning some 
+of them have white spaces within them. Finally, I added some of Obama's speeches throughout 
+his career to compare them to Trumps. 
 
 # Getting started
 ### Installing
@@ -23,6 +24,7 @@ may not be 100% right.
 3. Pandas-0.18.1
 4. Numpy-1.11.0
 5. Vue.JS-2
+6. Textblob
 
 ### Operation
 
@@ -33,6 +35,7 @@ as well as npm.
 
 # Issues / Other
 
+None at this time.
 
 # Preview
 
